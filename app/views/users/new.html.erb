@@ -1,18 +1,18 @@
 
-<%= form_tag({controller: "users", action: "create"}, method: "post") do %>
+<%= form_for(@user) do |f| %>
     <div>
-        <%= label_tag(:username, "Username:") %>
-        <%= text_field_tag(:username) %>
+        <%= f.label :username, "Username:" %>
+        <%= f.text_field :username %>
     </div>
     <div>
-        <%= label_tag(:email, "Email:") %>
-        <%= email_field_tag(:email) %>
+        <%= f.label :email, "Email:" %>
+        <%= f.email_field :email, placeholder: "user@example.com" %>
     </div>
     <div>
-        <%= label_tag(:password, "Password:") %>
-        <%= password_field_tag(:password) %>
+        <%= f.label :password, "Password:" %>
+        <%= f.password_field :password %>
     </div>
     <div>
-        <%= submit_tag("Create User") %>
+        <%= f.submit %>
     </div>
 <% end %>
